@@ -1,0 +1,101 @@
+cmake_minimum_required(VERSION 3.16)
+project(RileyTeamsComplete)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find required packages
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+
+# Include directories
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/core)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+# Source files for Riley Teams Complete
+set(RILEY_TEAMS_SOURCES
+    riley_teams_complete.cpp
+    core/riley_corpbrain.cpp
+    core/memory_engine.cpp
+    core/ai_reasoning.cpp
+    core/database.cpp
+    core/security_defense.cpp
+    core/voice_interface.cpp
+    core/predictive_engine.cpp
+    core/autonomous_scheduler.cpp
+    core/command_center.cpp
+    core/database_intelligence.cpp
+    core/schema_model.cpp
+)
+
+# Header files
+set(RILEY_TEAMS_HEADERS
+    core/riley_corpbrain.h
+    core/memory_engine.h
+    core/ai_reasoning.h
+    core/database.h
+    core/security_defense.h
+    core/voice_interface.h
+    core/predictive_engine.h
+    core/autonomous_scheduler.h
+    core/command_center.h
+    core/database_intelligence.h
+    core/schema_model.h
+    core/common_types.h
+)
+
+# Create executable
+add_executable(RileyTeamsComplete ${RILEY_TEAMS_SOURCES} ${RILEY_TEAMS_HEADERS})
+
+# Link libraries
+target_link_libraries(RileyTeamsComplete
+    Qt6::Core
+    Qt6::Widgets
+    d2d1
+    dwrite
+    windowscodecs
+    dwmapi
+    uxtheme
+    comctl32
+    shell32
+    ole32
+    oleaut32
+    uuid
+)
+
+# Windows specific settings
+if(WIN32)
+    set_target_properties(RileyTeamsComplete PROPERTIES
+        WIN32_EXECUTABLE TRUE
+        LINK_FLAGS "/SUBSYSTEM:WINDOWS"
+    )
+    
+    # Add Windows-specific definitions
+    target_compile_definitions(RileyTeamsComplete PRIVATE
+        WIN32_LEAN_AND_MEAN
+        NOMINMAX
+        UNICODE
+        _UNICODE
+    )
+endif()
+
+# Set output directory
+set_target_properties(RileyTeamsComplete PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin
+    RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin
+)
+
+# Copy resources to output directory
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR}/bin)
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/resources DESTINATION ${CMAKE_BINARY_DIR}/bin)
+
+# Installation
+install(TARGETS RileyTeamsComplete
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+)
+
+install(DIRECTORY assets/ DESTINATION bin/assets)
+install(DIRECTORY resources/ DESTINATION bin/resources)

@@ -1,0 +1,15 @@
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyCorpBrainConsole.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyCorpBrain.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyDemo.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyInteractiveGUI.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyGUI.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyWindowsGUI.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyEnterprise.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyUltraModern.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyTeamsStyle.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyTeamsClone.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/RileyTeamsStandalone.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Andrew/E-Tech-7/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Andrew/E-Tech-7/build/core/CMakeFiles/core_build.dir
+C:/Users/Andrew/E-Tech-7/build/core/CMakeFiles/ALL_BUILD.dir

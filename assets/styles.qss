@@ -1,0 +1,18 @@
+/* Sci-fi dark HUD theme for Riley Corpbrain */
+QWidget {
+    background-color: #181A20;
+    color: #E0E0E0;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+QPushButton {
+    background-color: #23263A;
+    color: #00FFD0;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+QMenuBar {
+    background-color: #23263A;
+    color: #00FFD0;
+}
+/* Add more styles for glowing effects, panels, etc. */

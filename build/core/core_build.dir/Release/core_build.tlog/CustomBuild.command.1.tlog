@@ -1,0 +1,10 @@
+^C:\USERS\ANDREW\E-TECH-7\CORE\CMAKELISTS.TXT
+setlocal
+C:\Users\Andrew\AppData\Local\Programs\Python\Python312\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/Andrew/E-Tech-7 -BC:/Users/Andrew/E-Tech-7/build --check-stamp-file C:/Users/Andrew/E-Tech-7/build/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

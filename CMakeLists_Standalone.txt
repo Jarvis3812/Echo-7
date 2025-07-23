@@ -1,0 +1,47 @@
+cmake_minimum_required(VERSION 3.16)
+project(RileyTeamsStandalone)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Create executable
+add_executable(RileyTeamsStandalone
+    riley_teams_standalone.cpp
+)
+
+# Link libraries
+target_link_libraries(RileyTeamsStandalone
+    d2d1
+    dwrite
+    windowscodecs
+    dwmapi
+    uxtheme
+    comctl32
+    shell32
+    ole32
+    oleaut32
+    uuid
+)
+
+# Windows specific settings
+if(WIN32)
+    set_target_properties(RileyTeamsStandalone PROPERTIES
+        WIN32_EXECUTABLE TRUE
+        LINK_FLAGS "/SUBSYSTEM:WINDOWS"
+    )
+    
+    # Add Windows-specific definitions
+    target_compile_definitions(RileyTeamsStandalone PRIVATE
+        WIN32_LEAN_AND_MEAN
+        NOMINMAX
+        UNICODE
+        _UNICODE
+    )
+endif()
+
+# Set output directory
+set_target_properties(RileyTeamsStandalone PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin
+    RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin
+)

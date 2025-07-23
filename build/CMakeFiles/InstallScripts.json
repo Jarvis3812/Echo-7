@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Andrew/E-Tech-7/build/cmake_install.cmake",
+		"C:/Users/Andrew/E-Tech-7/build/core/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

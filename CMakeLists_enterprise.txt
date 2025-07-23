@@ -1,0 +1,38 @@
+cmake_minimum_required(VERSION 3.16)
+project(RileyEnterprise)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Add core library
+add_subdirectory(core)
+
+# Create the complete Riley Enterprise application
+add_executable(RileyEnterprise
+    riley_enterprise_app.cpp
+)
+
+# Link with core library
+target_link_libraries(RileyEnterprise 
+    core_build
+    comctl32
+    user32
+    gdi32
+    kernel32
+)
+
+# Set Windows subsystem
+set_target_properties(RileyEnterprise PROPERTIES
+    WIN32_EXECUTABLE TRUE
+    LINK_FLAGS "/SUBSYSTEM:WINDOWS"
+)
+
+# Copy to build directory
+set_target_properties(RileyEnterprise PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Release
+)
+
+# Install target
+install(TARGETS RileyEnterprise
+    RUNTIME DESTINATION bin
+)
