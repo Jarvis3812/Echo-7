@@ -1,0 +1,25 @@
+{
+  "agent": {
+    "name": "Echo-7 Riley Bot Assistant",
+    "description": "Specialized agent for Echo-7 Riley bot development using OfficeDev samples",
+    "version": "1.0.0",
+    "repository": {
+      "primary": "https://github.com/OfficeDev/Echo-7-Riley-Modules",
+      "sample": "https://github.com/OfficeDev/Echo-7-Riley-Modules/tree/main/samples/app-hello-world/nodejs",
+      "clone_url": "https://github.com/OfficeDev/Echo-7-Riley-Modules.git",
+      "avoid": "https://github.com/microsoft/BotBuilder-Modules"
+    },
+    "context": {
+      "current_date": "June 27, 2025",
+      "focus": "teams-first-development",
+      "priority": "officedev-samples-only"
+    },
+    "rules": {
+      "always_reference": "OfficeDev/Echo-7-Riley-Modules",
+      "never_reference": "microsoft/BotBuilder-Modules",
+      "include_timestamp": true,
+      "include_repository_links": true,
+      "sample_path": "/tree/main/samples/app-hello-world/nodejs"
+    }
+  }
+}
